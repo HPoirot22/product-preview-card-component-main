@@ -1,0 +1,161 @@
+/* 
+  Importando as fontes diretamente do Google Fonts.
+  Isso nos permite usar os pesos (wght) 500 e 700 para Montserrat,
+  e também configurar a fonte Fraunces para ser mais "suave" e arredondada (opsz, wght, SOFT).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,700,100&family=Montserrat:wght@500;700&display=swap');
+
+/* Global Styles */
+
+h3, p {
+    font-family: Montserrat; /* A descrição e h3 deve ser Montserrat */
+    font-weight: 500; /* O texto "PERFUME" deve ter peso médio */
+    color: hsl(228, 12%, 48%);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.product-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-container img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.product-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.title{
+    font-family: Fraunces; /* O título principal deve ser Fraunces */
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1; /* Espaçamento entre as linhas */
+    color: hsl(212, 21%, 14%);
+    margin: 10px 0;
+    padding: 0;
+}
+
+/* Estilo para o parágrafo de descrição */
+.product-info p {
+    line-height: 1.6; /* Melhora a legibilidade do texto da descrição */
+    margin: 10px 0;
+    padding: 0;
+}
+
+.price-current {
+    font-family: Fraunces;
+    font-size: 28px;
+    font-weight: 700;
+    color: hsl(158, 36%, 37%);
+    margin: 0;
+}
+
+.price-original {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: hsl(228, 12%, 48%);
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+
+/* Documentação: Estilos principais do botão. */
+.add-to-cart-button {
+    /* Cor de fundo e cantos arredondados, como na imagem. */
+    background-color: hsl(158, 36%, 37%); /* Verde escuro */
+    color: white; 
+    border: 5px; 
+    border-radius: 8px;
+    padding: 15px 30px; /* Espaçamento interno */
+    font-weight: 700; /* O texto do botão parece em negrito na imagem */
+    font-size: 1em; 
+    cursor: pointer;
+    width: 100%; 
+    
+    /* CHAVE 1: Ativa o Flexbox para alinhar o conteúdo interno. */
+    display: flex;
+    /* CHAVE 2: Centraliza horizontalmente o ícone e o texto. */
+    justify-content: center; 
+    /* Centraliza verticalmente. */
+    align-items: center; 
+}
+
+/* Documentação: Efeito ao passar o mouse */
+.add-to-cart-button:hover {
+    background-color: hsl(158, 42%, 18%);
+}
+
+/* Documentação: Pseudo-elemento para injetar o ícone antes do texto. */
+.add-to-cart-button::before {
+    /* É obrigatório ter 'content' em um pseudo-elemento. Deixamos vazio. */
+    content: ""; 
+    
+    /* CHAVE 3: Define a imagem de fundo e o caminho para seu arquivo. */
+    background-image: url('./images/icon-cart.svg'); 
+    
+    /* Não repete a imagem de fundo. */
+    background-repeat: no-repeat; 
+    /* Garante que a imagem caiba no espaço definido. */
+    background-size: contain; 
+    
+    /* CHAVE 4: Define o tamanho do espaço para a imagem. */
+    width: 16px; 
+    height: 16px; 
+    
+    /* CHAVE 5: Cria o espaçamento entre o ícone e o texto do botão. */
+    margin-right: 10px; 
+}
+
+/*Footer Attribution */
+
+/* 7. Estilo da Atribuição (Footer) */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 700px) {
+    .product-container {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .product-container img {
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+}
